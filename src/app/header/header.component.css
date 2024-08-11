@@ -1,0 +1,66 @@
+/* Primary Toolbar Styling */
+.custom-toolbar {
+    background-color: #EEEEEE;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+}
+
+/* Logo Styling */
+.logo {
+    height: 40px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+/* Menu Spacer for Alignment */
+.menu-spacer {
+    flex: 1;
+}
+
+/* Menu Item Styling for both Toolbar and Sidenav */
+.custom-menu-item {
+    color: #508C9B;
+    font-weight: 400;
+    font-size: medium;
+    transition: color 0.3s ease, background-color 0.3s ease; 
+}
+
+/* Menu Item Hover Effects */
+.custom-menu-item:hover {
+    color: #004D40; 
+    background-color: rgba(255, 235, 59, 0.1);
+}
+
+/* Visibility Control for Mobile and Desktop */
+.show-on-mobile {
+    display: none;
+    margin-right: 5px;
+}
+
+.show-on-desktop {
+    display: block;
+}
+
+/* Responsive Design - Mobile View */
+@media (max-width: 600px) {
+    .nav-title {
+        display: none;
+    }
+    .show-on-mobile {
+        display: block;
+    }
+    .show-on-desktop {
+        display: none;
+    }
+}
+
+/* Responsive Design - Desktop View */
+@media (min-width: 601px) {
+    .show-on-desktop {
+        display: block;
+    }
+    .show-on-mobile {
+        display: none;
+    }
+}
+

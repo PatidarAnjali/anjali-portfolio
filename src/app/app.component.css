@@ -3,7 +3,6 @@
     background-color: #EEEEEE;
     font-family: "Manrope", sans-serif;
     font-weight: 600;
-    font-style: normal;
 }
 
 /* Logo Styling */
@@ -18,23 +17,30 @@
     flex: 1;
 }
 
-/* Menu Item Styling */
+/* Menu Item Styling for both Toolbar and Sidenav */
 .custom-menu-item {
     color: #508C9B;
-    font-family: "Manrope", sans-serif;
     font-weight: 500;
+    font-size: medium;
+    transition: color 0.3s ease, background-color 0.3s ease; 
 }
 
 /* Menu Item Hover Effects */
-.custom-menu-item:hover,
-.custom-menu-item.mat-button:hover {
-    color: #508C9B;
-    background-color: rgba(255, 235, 59, 0.1); /* Slight background color on hover */
+.custom-menu-item:hover {
+    color: #004D40; 
+    background-color: rgba(255, 235, 59, 0.1);
+}
+
+/* Ensure font is applied to Angular Material components */
+::ng-deep mat-sidenav .mat-list-item.custom-menu-item {
+    font-weight: 500;
+    font-size: medium;
 }
 
 /* Visibility Control for Mobile and Desktop */
 .show-on-mobile {
     display: none;
+    margin-right: 5px;
 }
 
 .show-on-desktop {

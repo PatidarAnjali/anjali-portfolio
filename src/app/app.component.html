@@ -12,7 +12,7 @@
     <mat-toolbar-row>
       <!-- Mobile Menu Button -->
       <button mat-icon-button (click)="sidenav.toggle()" class="show-on-mobile">
-        <mat-icon>menu</mat-icon>
+        <mat-icon>{{ sidenav.opened ? 'close' : 'menu'}}</mat-icon>
       </button>
 
       <!-- Logo and Title -->
@@ -35,7 +35,6 @@
   <mat-sidenav-container style="flex: 1;">
     <mat-sidenav #sidenav mode="side">
       <mat-nav-list>
-        <a (click)="sidenav.toggle()" href="#" mat-list-item class="custom-menu-item">Close</a>
         <a href="#" mat-list-item class="custom-menu-item">Menu Item 1</a>
         <a href="#" mat-list-item class="custom-menu-item">Menu Item 2</a>
         <a href="#" mat-list-item class="custom-menu-item">Menu Item 3</a>

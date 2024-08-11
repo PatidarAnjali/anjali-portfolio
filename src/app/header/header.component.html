@@ -14,15 +14,17 @@
       </button>
 
       <!-- Logo and Title -->
-      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <a href="">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+      </a>
       <span class="nav-title">Anjali's Portfolio</span>
 
       <span class="menu-spacer"></span>
 
       <!-- Desktop Menu Items -->
       <div class="show-on-desktop">
-        <a href="#" mat-button class="custom-menu-item">About</a>
-        <a href="#" mat-button class="custom-menu-item">Projects</a>
+        <a href="about" mat-button class="custom-menu-item">About</a>
+        <a href="projects" mat-button class="custom-menu-item">Projects</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
@@ -31,8 +33,8 @@
   <mat-sidenav-container style="flex: 1;">
     <mat-sidenav #sidenav mode="side">
       <mat-nav-list>
-        <a href="#" mat-list-item class="custom-menu-item">About</a>
-        <a href="#" mat-list-item class="custom-menu-item">Projects</a>
+        <a href="about" mat-list-item class="custom-menu-item">About</a>
+        <a href="projects" mat-list-item class="custom-menu-item">Projects</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

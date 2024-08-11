@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=EB+Garamond:wght@500&family=Manrope:wght@200..800&family=Maven+Pro:wght@600&family=Outfit:wght@900&family=PT+Serif&display=swap" rel="stylesheet">
 </head>
 
-<div style="display: flex; flex-direction: column; height: 100vh;">
+<div style="display: flex; flex-direction: column; height: 7vh;">
   <!-- Toolbar -->
   <mat-toolbar class="custom-toolbar">
     <mat-toolbar-row>
@@ -30,15 +30,13 @@
   </mat-toolbar>
 
   <!-- Sidenav and Content -->
-  <mat-sidenav-container style="flex: 1;">
+  <mat-sidenav-container style="flex: 1">
     <mat-sidenav #sidenav mode="side">
       <mat-nav-list>
         <a href="about" mat-list-item class="custom-menu-item">About</a>
         <a href="projects" mat-list-item class="custom-menu-item">Projects</a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+

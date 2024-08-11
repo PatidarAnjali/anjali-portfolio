@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import {MatCardModule} from '@angular/material/card';
+
 @Component({
   selector: 'app-projects',
   standalone: true,

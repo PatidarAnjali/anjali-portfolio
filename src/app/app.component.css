@@ -1,0 +1,32 @@
+/* Show/hide classes using media queries */
+.show-on-mobile {
+    display: none;
+  }
+  
+  .show-on-desktop {
+    display: block;
+  }
+  
+  @media (max-width: 600px) {
+    .show-on-mobile {
+      display: block;
+    }
+    .show-on-desktop {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 601px) {
+    .show-on-desktop {
+      display: block;
+    }
+    .show-on-mobile {
+      display: none;
+    }
+  }
+  
+  /* Spacer for the menu items */
+  .menu-spacer {
+    flex: 1;
+  }
+  

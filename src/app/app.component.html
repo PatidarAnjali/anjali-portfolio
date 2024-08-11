@@ -1,1 +1,44 @@
 <router-outlet />
+
+<div style="display: flex; flex-direction: column; height: 100vh;">
+  <!-- Toolbar -->
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <!-- Mobile Menu Button -->
+      <button mat-icon-button (click)="sidenav.toggle()" class="show-on-mobile">
+        <mat-icon>menu</mat-icon>
+      </button>
+      
+      <!-- Title -->
+      <span>Anjali Patidar</span>
+      
+      <span class="menu-spacer"></span>
+      
+      <!-- Desktop Menu Items -->
+      <div class="show-on-desktop">
+        <a href="#" mat-button>Menu Item 1</a>
+        <a href="#" mat-button>Menu Item 2</a>
+        <a href="#" mat-button>Menu Item 3</a>
+        <a href="#" mat-button>Menu Item 4</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <!-- Sidenav and Content -->
+  <mat-sidenav-container style="flex: 1;">
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" href="#" mat-list-item>Close</a>
+        <a href="#" mat-list-item>Menu Item 1</a>
+        <a href="#" mat-list-item>Menu Item 2</a>
+        <a href="#" mat-list-item>Menu Item 3</a>
+        <a href="#" mat-list-item>Menu Item 4</a>
+        <a href="#" mat-list-item>Menu Item 5</a>
+        <a href="#" mat-list-item>Menu Item 6</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

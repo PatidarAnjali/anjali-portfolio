@@ -2,7 +2,9 @@
 .custom-toolbar {
     background-color: #EEEEEE;
     font-family: "Manrope", sans-serif;
-    font-weight: 600;
+    font-weight: 550;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 /* Logo Styling */
@@ -20,14 +22,16 @@
 /* Menu Item Styling for both Toolbar and Sidenav */
 .custom-menu-item {
     color: #508C9B;
+    padding-left: 10px;
+    padding-right: 10px;
     font-weight: 400;
     font-size: medium;
-    transition: color 0.3s ease, background-color 0.3s ease; 
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Menu Item Hover Effects */
 .custom-menu-item:hover {
-    color: #004D40; 
+    color: #004D40;
     background-color: rgba(255, 235, 59, 0.1);
 }
 
@@ -49,6 +53,9 @@
     .show-on-mobile {
         display: block;
     }
+    .custom-toolbar {
+        padding-left: 0px;
+    }
     .show-on-desktop {
         display: none;
     }
@@ -59,8 +66,8 @@
     .show-on-desktop {
         display: block;
     }
+
     .show-on-mobile {
         display: none;
     }
 }
-

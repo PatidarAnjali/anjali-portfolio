@@ -1,32 +1,66 @@
-/* Show/hide classes using media queries */
+/* Primary Toolbar Styling */
+.custom-toolbar {
+    background-color: #EEEEEE;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Logo Styling */
+.logo {
+    height: 40px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+/* Menu Spacer for Alignment */
+.menu-spacer {
+    flex: 1;
+}
+
+/* Menu Item Styling */
+.custom-menu-item {
+    color: #508C9B;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+}
+
+/* Menu Item Hover Effects */
+.custom-menu-item:hover,
+.custom-menu-item.mat-button:hover {
+    color: #508C9B;
+    background-color: rgba(255, 235, 59, 0.1); /* Slight background color on hover */
+}
+
+/* Visibility Control for Mobile and Desktop */
 .show-on-mobile {
     display: none;
-  }
-  
-  .show-on-desktop {
+}
+
+.show-on-desktop {
     display: block;
-  }
-  
-  @media (max-width: 600px) {
-    .show-on-mobile {
-      display: block;
-    }
-    .show-on-desktop {
-      display: none;
-    }
-  }
-  
-  @media (min-width: 601px) {
-    .show-on-desktop {
-      display: block;
+}
+
+/* Responsive Design - Mobile View */
+@media (max-width: 600px) {
+    .nav-title {
+        display: none;
     }
     .show-on-mobile {
-      display: none;
+        display: block;
     }
-  }
-  
-  /* Spacer for the menu items */
-  .menu-spacer {
-    flex: 1;
-  }
-  
+    .show-on-desktop {
+        display: none;
+    }
+}
+
+/* Responsive Design - Desktop View */
+@media (min-width: 601px) {
+    .show-on-desktop {
+        display: block;
+    }
+    .show-on-mobile {
+        display: none;
+    }
+}
+

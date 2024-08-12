@@ -6,6 +6,10 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+// MongoDB connection
+const connectDB = require("./config/db");
+connectDB();
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

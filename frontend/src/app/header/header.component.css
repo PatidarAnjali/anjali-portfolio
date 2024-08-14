@@ -12,9 +12,9 @@
 .mat-sidenav-container {
     flex: 1;
     background-color: white;
-    width: 120px;
+    width: 100px;
     padding-left: 20px;
-    height: 100px;
+    height: 113px;
 }
 
 .mat-nav-list {

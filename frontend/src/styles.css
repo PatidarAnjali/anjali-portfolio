@@ -4,5 +4,6 @@ html, body {
 
 body { 
     margin: 0; 
+    background-color: transparent;
     font-family: "Manrope", sans-serif; 
 }

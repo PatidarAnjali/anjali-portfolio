@@ -9,12 +9,12 @@
     border-bottom: 1px solid #e0e0e0; 
 }
 
-/* Adjust Height for Sidenav Container */
 .mat-sidenav-container {
     flex: 1;
     background-color: white;
     width: 120px;
     padding-left: 20px;
+    height: 100px;
 }
 
 .mat-nav-list {

@@ -3,28 +3,16 @@ const router = express.Router();
 const Project = require('../models/Project');
 
 // GET all projects
-router.get('/projects', async(req, res) => {
+router.get('/projects', async (req, res) => {
     try {
         const projects = await Project.find();
+        console.log(projects); // Log projects to see if data is being retrieved
         res.json(projects);
     } catch (err) {
-        res.status(500).json({
-            message: err.message
-        });
+        res.status(500).json({ message: err.message });
     }
 });
 
-// POST a new project
-router.post('/projects', async(req, res) => {
-    const project = new Project(req.body);
-    try {
-        const newProject = await project.save();
-        res.status(201).json(newProject);
-    } catch (err) {
-        res.status(400).json({
-            message: err.message
-        });
-    }
-})
+
 
 module.exports = router;

@@ -12,10 +12,6 @@ connectDB();
 
 app.use('/api', projectRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Anjali's Portfolio is listening on port ${port}`)
 })

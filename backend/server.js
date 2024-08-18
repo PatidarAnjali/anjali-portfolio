@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const projectRoutes = require('./routes/projects');
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 app.use(express.json()); // middleware
 
@@ -20,3 +20,4 @@ app.use('/api', projectRoutes);
 app.listen(port, () => {
   console.log(`Anjali's Portfolio is listening on port ${port}`)
 })
+

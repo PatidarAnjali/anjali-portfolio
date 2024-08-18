@@ -6,25 +6,24 @@
   <p>Welcome to my projects section! Here, you’ll find a collection of my work across various fields,<br>
     showcasing my skills in web development, programming languages, and frameworks.</p><br>
 
-  <!-- Loop through the projects and display each one in a mat-card -->
-  <mat-card *ngFor="let project of projects" class="project-card" appearance="outlined">
-    <mat-card-header>
-      <mat-card-title style="padding-bottom: 10px;">{{ project.title }}</mat-card-title>
-    </mat-card-header>
-    <!-- <img *ngIf="project.imageUrl" mat-card-image [src]="project.imageUrl" alt="Photo of {{ project.title }}"> -->
-    <mat-card-content>
-      <p>{{ project.description }}</p>
-      <ul>
-        <li *ngFor="let tech of project.technologies">{{ tech }}</li>
-      </ul>
-    </mat-card-content>
-    <mat-card-actions>
-      <a *ngIf="project.link" [href]="project.link" target="_blank">
-        <button mat-button>View</button>
-      </a>
-    </mat-card-actions>
-  </mat-card>
+    <!-- Loop through the projects and display each one in a mat-card -->
+    <mat-card *ngFor="let project of projects" class="project-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title style="padding-top: 8px;">{{ project.title }}</mat-card-title>
+      </mat-card-header>
+      <!-- <img *ngIf="project.imageUrl" mat-card-image [src]="project.imageUrl" alt="Photo of {{ project.title }}"> -->
+      <mat-card-content>
+        <p>{{ project.description }}</p>
+        <p><span style="font-weight: 700;">Technologies used: </span>{{ project.technologies }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a *ngIf="project.link" [href]="project.link" target="_blank">
+          <button mat-button>View</button>
+        </a>
+      </mat-card-actions>
+    </mat-card>
 
 </div>
 
 <app-footer></app-footer>
+

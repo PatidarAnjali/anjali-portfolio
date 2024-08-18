@@ -19,9 +19,13 @@ export class ProjectsComponent implements OnInit {
   constructor(private projectService: ProjectService){};
 
   ngOnInit(): void {
-    this.projectService.getProjects().subscribe((data) => {
-      this.projects = data;
-    })
-  };
+    this.projectService.getProjects().subscribe({
+      next: (data) => {
+        console.log('Projects from service:', data);
+        this.projects = data;
+      },
+      error: (err) => console.error('Error fetching projects:', err)
+    });
+  }
 
 }

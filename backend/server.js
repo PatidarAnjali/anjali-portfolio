@@ -1,10 +1,15 @@
-const express = require('express')
+const express = require('express');
+const cors = require('cors');
 const projectRoutes = require('./routes/projects');
 
 const app = express()
 const port = 3000
 
 app.use(express.json()); // middleware
+
+app.use(cors({
+  origin: 'http://localhost:4200'
+}));
 
 // MongoDB connection
 const connectDB = require("./config/db");

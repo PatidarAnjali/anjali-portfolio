@@ -4,3 +4,28 @@
   justify-content: center;
   align-items: center;
 }
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px; /* Adjusted padding for better responsiveness */
+  justify-content: center; /* Centers the grid items horizontally */
+  align-items: center; /* Centers the grid items vertically (if needed) */
+  max-width: 1200px; /* Optional: limits the maximum width for better alignment */
+  margin: 0 auto; /* Centers the grid container horizontally */
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

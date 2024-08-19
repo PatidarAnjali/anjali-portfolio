@@ -3,4 +3,4 @@
 .env.local
 
 # Sensitive files
-config/db.js
+# config/db.js

@@ -1,11 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const projectRoutes = require('./routes/projects');
+const helmet = require('helmet');
 
 const app = express();
 const port = 3000;
 
 app.use(express.json()); // middleware
+app.use(helmet());
 
 app.use(cors({
   origin: 'http://localhost:4200'

@@ -17,7 +17,7 @@ app.use(cors({
 const connectDB = require("./config/db");
 connectDB();
 
-app.use('/', projectRoutes);
+app.use('/projects', projectRoutes);
 
 app.listen(port, () => {
   console.log(`Anjali's Portfolio is listening on port ${port}`)

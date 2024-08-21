@@ -4,3 +4,5 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
+
+throw new Error('White screen, reveal yourself!');

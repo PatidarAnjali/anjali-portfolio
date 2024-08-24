@@ -21,9 +21,9 @@ connectDB();
 app.use('/api', projectRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist/anjali-portfolio/browser")));
+  app.use(express.static(path.join(__dirname, "../app")));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend", "dist", "anjali-portfolio", "browser", "assets", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../app", "index.html"));
   });
 } else {
   app.get("/", (req, res) => {
@@ -34,5 +34,5 @@ if (process.env.NODE_ENV === "production") {
 };
 
 app.listen(port, () => {
-  console.log(`Anjali's Portfolio is listening on port ${port}`)
+  console.log(`Anjali's Portfolio is listening on port ${port}`);
 });

@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:4200' // Adjust if necessary
+  origin: ['http://localhost:4200', 'https://anjali-portfolio-backend.onrender.com/']
 }));
 
 // MongoDB connection

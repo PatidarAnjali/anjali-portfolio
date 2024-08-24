@@ -10,9 +10,9 @@ const port = process.env.PORT || 3000;
 app.use(express.json()); // middleware
 app.use(helmet());
 
-app.use(cors({
-  origin: 'http://localhost:4200'
-}));
+// app.use(cors({
+//   origin: 'http://localhost:4200'
+// }));
 
 // MongoDB connection
 const connectDB = require("./config/db");

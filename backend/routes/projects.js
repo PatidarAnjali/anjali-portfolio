@@ -3,7 +3,7 @@ const router = express.Router();
 const Project = require('../models/Project');
 
 // GET all projects
-router.get('/projects', async(req, res, next) => {
+router.get('/projects', async (req, res, next) => {
     try {
         const projects = await Project.find();
         console.log(projects);

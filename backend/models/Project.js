@@ -5,7 +5,7 @@ const projectSchema = new mongoose.Schema({
   description: String,
   technologies: String,
   link: String
-}, { collection: 'projects' }); 
+}, { collection: 'projects' });
 
 const Project = mongoose.model('Project', projectSchema);
 

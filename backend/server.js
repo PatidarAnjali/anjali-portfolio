@@ -21,20 +21,9 @@ connectDB();
 // API Routes
 app.use('/api', projectRoutes);
 
-// Serve static files from Angular build
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist/anjali-portfolio")));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/dist/anjali-portfolio", "index.html"));
-  });
-} else {
-  app.use(express.static(path.join(__dirname, "app"))); // Serve app folder in development
-  
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "app", "index.html"));
-  });
-}
+app.get('/', (req, res) => {
+  res.send('Welcome to Anjali\'s Portfolio!');
+});
 
 // Start the server
 app.listen(port, () => {

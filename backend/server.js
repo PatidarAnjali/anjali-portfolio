@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const path = require('path'); 
+// const path = require('path'); 
 
 const router = express.Router();
 const Project = require('./models/Project');
@@ -36,17 +36,17 @@ router.get('/projects', async (req, res, next) => {
   }
 });
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist/anjali-portfolio")));
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "../frontend/dist/anjali-portfolio")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/dist/anjali-portfolio", "index.html"));
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.json({ message: "API running..." });
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "../frontend/dist/anjali-portfolio", "index.html"));
+//   });
+// } else {
+//   app.get("/", (req, res) => {
+//     res.json({ message: "API running..." });
+//   });
+// }
 
 // Start the server
 app.listen(port, () => {

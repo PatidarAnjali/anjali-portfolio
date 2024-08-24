@@ -22,4 +22,3 @@ app.use('/api', projectRoutes);
 app.listen(port, () => {
   console.log(`Anjali's Portfolio is listening on port ${port}`)
 })
-

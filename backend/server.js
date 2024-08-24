@@ -35,6 +35,18 @@ router.get('/projects', async (req, res, next) => {
   }
 });
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist/anjali-portfolio")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontend/dist/anjali-portfolio", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.json({ message: "API running..." });
+  });
+}
+
 // Start the server
 app.listen(port, () => {
   console.log(`Anjali's Portfolio is listening on port ${port}`);

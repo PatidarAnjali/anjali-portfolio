@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to Anjali\'s Portfolio!');
 });
 
-router.get('/projects', async (req, res, next) => {
+app.get('/projects', async (req, res, next) => {
   try {
     const projects = await Project.find();
     console.log(projects);

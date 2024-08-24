@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const path = require('path');
-const projectRoutes = require('./routes/projects');
+
+const router = express.Router();
+const Project = require('../models/Project');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,11 +19,20 @@ app.use(cors({
 const connectDB = require("./config/db");
 connectDB();
 
-// API Routes
-app.use('/api', projectRoutes);
-
 app.get('/', (req, res) => {
   res.send('Welcome to Anjali\'s Portfolio!');
+});
+
+router.get('/projects', async (req, res, next) => {
+  try {
+    const projects = await Project.find();
+    console.log(projects);
+    res.json(projects);
+  } catch (err) {
+    res.status(500).json({
+      message: err.message
+    });
+  }
 });
 
 // Start the server

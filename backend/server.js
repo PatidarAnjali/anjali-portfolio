@@ -20,11 +20,11 @@ connectDB();
 
 app.use('/api', projectRoutes);
 
-if(process.env.NODE_ENV === "production"){
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist/anjali-portfolio/browser")));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"));
-  })
+    res.sendFile(path.resolve(__dirname, "../frontend", "dist", "anjali-portfolio", "browser", "assets", "index.html"));
+  });
 } else {
   app.get("/", (req, res) => {
     res.json({

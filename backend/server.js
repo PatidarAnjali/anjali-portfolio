@@ -3,7 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 const router = express.Router();
-const Project = require('../models/Project');
+const Project = require('./models/Project');
 
 const app = express();
 const port = process.env.PORT || 3000;

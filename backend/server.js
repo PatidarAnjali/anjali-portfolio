@@ -6,21 +6,22 @@ const Project = require('./models/Project');
 const connectDB = require("./config/db");
 
 const app = express();
-const url = 'https://anjali-portfolio-backend.onrender.com';
+
+const frontendURL = 'https://anjali-portfolio-frontend.onrender.com';
 
 // Middleware
 app.use(express.json());
 app.use(helmet());
 app.use(cors({
-  origin: url
+  origin: frontendURL
 }));
 
 // MongoDB connection
 connectDB();
 
-// Serve static files (if any)
+// Serve static files for production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static(path.join(__dirname, 'dist/anjali-portfolio')));
 }
 
 // Routes
@@ -37,14 +38,14 @@ app.get('/projects', async (req, res, next) => {
   }
 });
 
+// Serve the Angular application for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/anjali-portfolio/index.html'));
+});
+
 // Global error handler 
 app.use((err, req, res, next) => {
   res.status(500).json({ message: err.message });
-});
-
-app.use(express.static(path.join(__dirname, 'dist/anjali-portfolio')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/anjali-portfolio/index.html'));
 });
 
 // Start the server

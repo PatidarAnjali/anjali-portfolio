@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 app.get('/projects', async (req, res, next) => {
   try {
     const projects = await Project.find();
-    console.log(projects);
+    // console.log(projects);
     res.json(projects);
   } catch (err) {
     res.status(500).json({
@@ -50,5 +50,5 @@ app.get('/projects', async (req, res, next) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Anjali's Portfolio is listening on port ${port}`);
+  // console.log(`Anjali's Portfolio is listening on port ${port}`);
 });

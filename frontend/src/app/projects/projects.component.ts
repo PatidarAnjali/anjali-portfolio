@@ -21,10 +21,10 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.projectService.getProjects().subscribe({
       next: (data) => {
-        console.log('Projects from service:', data);
+        // console.log('Projects from service:', data);
         this.projects = data;
       },
-      error: (err) => console.error('Error fetching projects:', err)
+      // error: (err) => console.error('Error fetching projects:', err)
     });
   }
 

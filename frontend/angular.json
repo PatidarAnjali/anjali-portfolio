@@ -11,18 +11,19 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/anjali-portfolio",
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets"
+                "input": "public"
               }
             ],
             "styles": [
@@ -33,12 +34,6 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -52,16 +47,10 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/",
-              "deployUrl": "/"
+              "baseHref": "/", 
+              "deployUrl": "/" 
             },
             "development": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.ts"
-                }
-              ],
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -88,7 +77,8 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "src/polyfills.ts"
+              "zone.js",
+              "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [

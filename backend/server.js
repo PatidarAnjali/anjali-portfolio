@@ -42,6 +42,11 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: err.message });
 });
 
+app.use(express.static(path.join(__dirname, 'dist/anjali-portfolio')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/anjali-portfolio/index.html'));
+});
+
 // Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

@@ -1,6 +1,3 @@
 # Environment files
-.env
 .env.local
 
-# Sensitive files
-# config/db.js

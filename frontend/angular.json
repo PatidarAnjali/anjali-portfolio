@@ -47,8 +47,8 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/", 
-              "deployUrl": "/" 
+              "baseHref": "/",
+              "deployUrl": "/"
             },
             "development": {
               "optimization": false,
@@ -92,6 +92,14 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/anjali-portfolio",
+            "netlifyToken": "nfp_LSm1yMpKqe8JaVngARvk3cCxMfQm1DrN537e",
+            "siteId": "heartfelt-rugelach-fee5e4"
           }
         }
       }

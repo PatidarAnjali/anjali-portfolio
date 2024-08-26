@@ -1,6 +1,7 @@
 {
   "name": "anjali-portfolio",
   "version": "1.0.0",
+  "homepage": ".",
   "engines": {
     "node": ">= 19 <20"
   },

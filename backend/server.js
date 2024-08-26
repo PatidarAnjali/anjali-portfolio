@@ -29,6 +29,10 @@ app.get('/', (req, res) => {
   res.send('Welcome to Anjali\'s Portfolio!');
 });
 
+app.get('/about', (req, res) => {
+  res.send('This is Anjali\'s About section!');
+});
+
 app.get('/projects', async (req, res, next) => {
   try {
     const projects = await Project.find();

@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/anjali-portfolio/browser",
+            "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -73,7 +73,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/anjali-portfolio-server",
+            "outputPath": "dist",
             "main": "src/main.server.ts",
             "tsConfig": "tsconfig.server.json"
           }
@@ -119,7 +119,7 @@
         "deploy": {
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
-            "outputPath": "dist/anjali-portfolio/browser",
+            "outputPath": "dist",
             "netlifyToken": "nfp_LSm1yMpKqe8JaVngARvk3cCxMfQm1DrN537e",
             "siteId": "heartfelt-rugelach-fee5e4"
           }

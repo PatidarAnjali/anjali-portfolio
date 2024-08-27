@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/anjali-portfolio",
+            "outputPath": "dist/anjali-portfolio/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -70,6 +70,28 @@
           },
           "defaultConfiguration": "development"
         },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/anjali-portfolio-server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "anjali-portfolio:build:development",
+              "serverTarget": "anjali-portfolio:server:development"
+            },
+            "production": {
+              "browserTarget": "anjali-portfolio:build:production",
+              "serverTarget": "anjali-portfolio:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
@@ -97,7 +119,7 @@
         "deploy": {
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
-            "outputPath": "dist/anjali-portfolio",
+            "outputPath": "dist/anjali-portfolio/browser",
             "netlifyToken": "nfp_LSm1yMpKqe8JaVngARvk3cCxMfQm1DrN537e",
             "siteId": "heartfelt-rugelach-fee5e4"
           }
